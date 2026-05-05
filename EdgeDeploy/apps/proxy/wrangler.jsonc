@@ -1,0 +1,39 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deplit-proxy",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-20",
+  "observability": {
+    "enabled": true,
+  },
+  "routes": [
+    {
+      "pattern": "*.deplit.tech/*",
+      "zone_name": "deplit.tech",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SITES",
+      "id": "7ac1d3d3e61645b6bf121112ac761547",
+    },
+  ],
+  "assets": {
+    "directory": "./assets",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  /**
+   * Environment Variables
+   * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+   */
+  "vars": {
+    // this flag is used for adding extra debug headers to the request
+    "DEBUG": true,
+    "BLOB_HOSTNAME": "deplit.blob.core.windows.net",
+  },
+}

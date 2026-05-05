@@ -1,0 +1,51 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalEnv": [
+    "SKIP_ENV_VALIDATION"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputs": [
+        ".dist/**"
+      ],
+      "env": [
+        "SKIP_ENV_VALIDATION"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^typecheck"
+      ]
+    },
+    "check-types": {
+      "dependsOn": [
+        "^check-types"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "//#azurite": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:studio:local": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

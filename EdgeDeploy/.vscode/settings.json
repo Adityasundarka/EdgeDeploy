@@ -1,0 +1,27 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.associations": {
+    "wrangler.json": "jsonc"
+  },
+  "azureFunctions.deploySubpath": "apps/spawner",
+  "azureFunctions.postDeployTask": "npm install (functions)",
+  "azureFunctions.projectLanguage": "TypeScript",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectLanguageModel": 4,
+  "azureFunctions.projectSubpath": "apps/spawner",
+  "azureFunctions.preDeployTask": "npm prune (functions)"
+}

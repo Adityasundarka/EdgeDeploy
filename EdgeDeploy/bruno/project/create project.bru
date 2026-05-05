@@ -1,0 +1,20 @@
+meta {
+  name: create project
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/project
+  body: json
+  auth: none
+}
+
+body:json {
+    {
+      "githubUrl": "https://github.com/mdhruvil/deplit-zaggonaut",
+      "slug": "deplit-zaggonaut",
+      "name": "deplit-zaggonaut",
+      "fullName": "mdhruvil/deplit-zaggonaut"
+    }
+}

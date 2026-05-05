@@ -1,0 +1,20 @@
+{
+	"name": "@deplit/proxy",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --persist-to='../api/.wrangler/state'",
+		"start": "wrangler dev --persist-to='../api/.wrangler/state'",
+		"cf-typegen": "wrangler types",
+		"lint": "eslint .",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250420.0",
+		"@deplit/eslint-config": "workspace:^",
+		"eslint": "^9.20.0",
+		"typescript": "^5.5.2",
+		"wrangler": "^4.12.0"
+	}
+}
